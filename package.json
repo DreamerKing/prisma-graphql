@@ -1,0 +1,15 @@
+{
+  "name": "prisma-graphql",
+  "version": "1.0.0",
+  "description": "example for prisma and graphql",
+  "main": "main.ts",
+  "repository": "git@github.com:DreamerKing/prisma-graphql.git",
+  "author": "wangxianzhao <wangxianzhao@mokuai.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^16.9.0",
+    "prisma": "^3.0.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2"
+  }
+}
