@@ -2,10 +2,32 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
 generator client {
   provider = "prisma-client-js"
+}
+
+model Warehouse {
+  id        Int             @id @default(autoincrement())
+  name      String          @db.VarChar(20)
+  serviceId Int             @unique
+  service   ServiceProvider @relation(fields: [serviceId], references: [id])
+  status    Int             @default(0)
+  created   DateTime        @default(now())
+  modified  DateTime        @default(now())
+}
+
+model ServiceProvider {
+  id          Int         @id @default(autoincrement())
+  name        String      @db.VarChar(20)
+  isWarehouse Boolean     @default(false)
+  isLogistic  Boolean     @default(false)
+  contact     String      @db.VarChar(20)
+  mobile      String      @db.VarChar(11)
+  created     DateTime    @default(now())
+  modified    DateTime    @default(now())
+  Warehouse   Warehouse[]
 }

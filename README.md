@@ -16,3 +16,33 @@ npx prisma init
 ```sh
 npx tsc --init
 ```
+
+```sh
+npx prisma migrate dev --name init
+
+```
+
+```
+yarn add @prisma/client
+```
+
+```
+yarn add  type-graphql apollo-server
+```
+
+配置 TypeQraphQL
+
+```
+yarn add graphql class-validator type-graphql
+yarn add reflect-metadata
+```
+
+```
+import "reflect-metadata";
+```
+
+tsconfig.json
+
+```
+
+```
